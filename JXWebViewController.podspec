@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JXWebViewController'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JXWebViewController.'
+  s.summary          = 'An iOS view controller wrapper for WKWebView.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,25 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Since iOS 8, WKWebView is preferred over UIWebView. But unlike UIWebView, WKWebView provide less default behaviors due to the security design. JXWebViewController wrap up a WKWebView and implements a few standard features as iOS Safari does. So web views can be easily used in your apps out-of-the-box. It is also referred to as WebViewController, UIWebViewController or WKWebViewController.
                        DESC
 
   s.homepage         = 'https://github.com/swordray/JXWebViewController'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'swordray' => 'swordray@gmail.com' }
+  s.author           = { 'Jianqiu Xiao' => 'swordray@gmail.com' }
   s.source           = { :git => 'https://github.com/swordray/JXWebViewController.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'JXWebViewController/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'JXWebViewController' => ['JXWebViewController/Assets/*.png']
-  # }
+
+  s.resource_bundles = {
+    'JXWebViewController' => ['JXWebViewController/*.lproj']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'WebKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

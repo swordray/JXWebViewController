@@ -6,6 +6,7 @@
 //  Copyright (c) 2018 swordray. All rights reserved.
 //
 
+import JXWebViewController
 import UIKit
 
 @UIApplicationMain
@@ -15,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let url = URL(string: "https://example.com/")!
+
+        let webViewController = JXWebViewController()
+        webViewController.webView.load(URLRequest(url: url))
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = webViewController
+        window?.makeKeyAndVisible()
+
         return true
     }
 
