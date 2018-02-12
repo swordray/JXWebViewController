@@ -128,6 +128,7 @@ extension JXWebViewController: WKUIDelegate {
         alertController.addAction(UIAlertAction(title: JXLocalizedString("OK"), style: .default) { _ in
             completionHandler(true)
         })
+        alertController.preferredAction = alertController.actions.last
         present(alertController, animated: true)
     }
 
@@ -142,6 +143,7 @@ extension JXWebViewController: WKUIDelegate {
         alertController.addAction(UIAlertAction(title: JXLocalizedString("OK"), style: .default) { _ in
             completionHandler(alertController.textFields?.first?.text)
         })
+        alertController.preferredAction = alertController.actions.last
         present(alertController, animated: true)
     }
 
