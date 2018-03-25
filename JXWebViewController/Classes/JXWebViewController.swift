@@ -81,7 +81,7 @@ extension JXWebViewController: WKNavigationDelegate {
         webView.scrollView.refreshControl?.endRefreshing()
     }
 
-    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    open func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         webView.scrollView.refreshControl?.endRefreshing()
     }
 
