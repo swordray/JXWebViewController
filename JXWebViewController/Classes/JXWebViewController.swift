@@ -14,7 +14,7 @@ open class JXWebViewController: UIViewController {
 
     open var webView: WKWebView {
         loadViewIfNeeded()
-        return view as! WKWebView
+        return view as? WKWebView ?? .init()
     }
 
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -38,7 +38,7 @@ open class JXWebViewController: UIViewController {
         view = webView
     }
 
-    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if object as? WKWebView == webView && keyPath == "title" {
             title = change?[.newKey] as? String
         }
@@ -148,7 +148,8 @@ extension JXWebViewController: WKUIDelegate {
     }
 
     open func webViewDidClose(_ webView: WKWebView) {
-        webView.load(URLRequest(url: URL(string:"about:blank")!))
+        guard let url = URL(string: "about:blank") else { return }
+        webView.load(URLRequest(url: url))
     }
 
     open func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
