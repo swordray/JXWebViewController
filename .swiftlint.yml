@@ -2,7 +2,6 @@ included:
 - JXWebViewController
 
 disabled_rules:
-- block_based_kvo
 - cyclomatic_complexity
 - file_length
 - function_body_length

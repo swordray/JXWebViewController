@@ -11,6 +11,7 @@ import WebKit
 open class JXWebViewController: UIViewController {
 
     open var configuration = WKWebViewConfiguration()
+    open var webViewTitleObservation: NSKeyValueObservation?
 
     open var webView: WKWebView {
         loadViewIfNeeded()
@@ -29,18 +30,15 @@ open class JXWebViewController: UIViewController {
 
     open override func loadView() {
         let webView = WKWebView(frame: .zero, configuration: configuration)
-        webView.addObserver(self, forKeyPath: "title", options: .new, context: nil)
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
         webView.scrollView.refreshControl = UIRefreshControl()
         webView.scrollView.refreshControl?.addTarget(webView, action: #selector(webView.reload), for: .valueChanged)
         webView.uiDelegate = self
         view = webView
-    }
 
-    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        if object as? WKWebView == webView && keyPath == "title" {
-            title = change?[.newKey] as? String
+        webViewTitleObservation = webView.observe(\.title, options: .new) { webView, _ in
+            self.title = webView.title
         }
     }
 }
