@@ -10,7 +10,7 @@ import WebKit
 
 open class JXWebViewController: UIViewController {
 
-    open var configuration = WKWebViewConfiguration()
+    open var webViewConfiguration: WKWebViewConfiguration!
     open var webViewTitleObservation: NSKeyValueObservation?
 
     open var webView: WKWebView {
@@ -21,7 +21,8 @@ open class JXWebViewController: UIViewController {
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        configuration.dataDetectorTypes = .phoneNumber
+        webViewConfiguration = WKWebViewConfiguration()
+        webViewConfiguration.dataDetectorTypes = .phoneNumber
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -29,7 +30,7 @@ open class JXWebViewController: UIViewController {
     }
 
     override open func loadView() {
-        let webView = WKWebView(frame: .zero, configuration: configuration)
+        let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
         webView.scrollView.refreshControl = UIRefreshControl()
@@ -158,7 +159,7 @@ extension JXWebViewController: WKUIDelegate {
     open func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
         guard let url = elementInfo.linkURL else { return nil }
         let webViewController = JXWebViewController()
-        webViewController.configuration = configuration
+        webViewController.webViewConfiguration = webViewConfiguration
         webViewController.webView.load(URLRequest(url: url))
         return webViewController
     }

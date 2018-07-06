@@ -52,7 +52,7 @@ navigationController?.pushViewController(webViewController, animated: true)
 ### Customization
 
 * Use `webView` property to access the [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) instance.
-* Use `configuration` property to set up [WKWebViewConfiguration](https://developer.apple.com/documentation/webkit/wkwebviewconfiguration) before view is loaded.
+* Use `webViewConfiguration` property to set up [WKWebViewConfiguration](https://developer.apple.com/documentation/webkit/wkwebviewconfiguration) before view is loaded.
 * Create a `JXWebViewController` subclass which implements or overrides [WKNavigationDelegate](https://developer.apple.com/documentation/webkit/wknavigationdelegate) and [WKUIDelegate](https://developer.apple.com/documentation/webkit/wkuidelegate) methods.
 
 ## Credits

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+* Rename `configuration` to `webViewConfiguration`
 * Update SwiftLint 0.26.0
 
 ## 0.2.0 (2018-06-24)
