@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+* Support Handoff from app to Safari
 * Rename `configuration` to `webViewConfiguration`
 * Update SwiftLint 0.26.0
 

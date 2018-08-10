@@ -21,6 +21,7 @@ Since iOS 8, WKWebView is preferred over UIWebView. But unlike UIWebView, WKWebV
 * Perform auto detection of phone numbers.
 * Proxy the page title to the controller title.
 * Add the refresh control.
+* Support Handoff from app to Safari.
 
 ## Requirements
 

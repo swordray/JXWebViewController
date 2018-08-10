@@ -10,8 +10,8 @@ import WebKit
 
 open class JXWebViewController: UIViewController {
 
-    open var webViewConfiguration: WKWebViewConfiguration!
-    open var webViewTitleObservation: NSKeyValueObservation?
+    open var webViewConfiguration: WKWebViewConfiguration
+    open var webViewKeyValueObservations: [AnyKeyPath: NSKeyValueObservation]
 
     open var webView: WKWebView {
         loadViewIfNeeded()
@@ -19,14 +19,19 @@ open class JXWebViewController: UIViewController {
     }
 
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
         webViewConfiguration = WKWebViewConfiguration()
         webViewConfiguration.dataDetectorTypes = .phoneNumber
+
+        webViewKeyValueObservations = [:]
+
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+        userActivity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb)
     }
 
+    @available(*, unavailable)
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
 
     override open func loadView() {
@@ -38,9 +43,28 @@ open class JXWebViewController: UIViewController {
         webView.uiDelegate = self
         view = webView
 
-        webViewTitleObservation = webView.observe(\.title, options: .new) { webView, _ in
+        webViewKeyValueObservations[\WKWebView.title] = webView.observe(\.title, options: .new) { webView, _ in
             self.title = webView.title
         }
+
+        webViewKeyValueObservations[\WKWebView.url] = webView.observe(\.url) { webView, _ in
+            if let url = webView.url, ["http", "https"].contains(url.scheme) {
+                self.userActivity?.webpageURL = url
+                self.userActivity?.needsSave = true
+            }
+        }
+    }
+
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        userActivity?.becomeCurrent()
+    }
+
+    override open func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        userActivity?.invalidate()
     }
 }
 
