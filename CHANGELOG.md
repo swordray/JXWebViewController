@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.1 (2018-09-15)
+
 * Add swift_version to CocoaPods
 
 ## 1.0.0 (2018-08-10)
