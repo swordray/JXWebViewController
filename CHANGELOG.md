@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Add swift_version to CocoaPods
+
 ## 1.0.0 (2018-08-10)
 
 * Support Handoff from app to Safari
