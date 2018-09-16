@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Update Swift 4.2
+
 ## 1.0.1 (2018-09-15)
 
 * Add swift_version to CocoaPods
