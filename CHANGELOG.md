@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Update Swift 5.0
+
 ## 1.1.0 (2018-09-16)
 
 * Update Swift 4.2
