@@ -95,6 +95,7 @@ extension JXWebViewController: WKNavigationDelegate {
             })
             alertController.preferredAction = alertController.actions.last
             present(alertController, animated: true)
+
         default:
             completionHandler(.performDefaultHandling, nil)
         }

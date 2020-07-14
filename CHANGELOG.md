@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+* Update SwiftLint 0.39.0
 * Drop deperated 3D Touch support
 
 ## 1.2.1 (2019-05-08)
