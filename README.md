@@ -16,7 +16,6 @@ Since iOS 8, WKWebView is preferred over UIWebView. But unlike UIWebView, WKWebV
 * Implement JavaScript `alert`, `confirm` and `prompt`.
 * Open native links of `mailto`, `tel`, `itms-apps` and so on.
 * Open and close pages in current view.
-* Peek & pop links by 3D Touch.
 * Reload when web content process is terminated.
 * Perform auto detection of phone numbers.
 * Proxy the page title to the controller title.

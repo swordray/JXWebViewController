@@ -174,23 +174,4 @@ extension JXWebViewController: WKUIDelegate {
         guard let url = URL(string: "about:blank") else { return }
         webView.load(URLRequest(url: url))
     }
-
-    open func webView(_ webView: WKWebView, shouldPreviewElement elementInfo: WKPreviewElementInfo) -> Bool {
-        guard let scheme = elementInfo.linkURL?.scheme else { return false }
-        return WKWebView.handlesURLScheme(scheme)
-    }
-
-    open func webView(_ webView: WKWebView, previewingViewControllerForElement elementInfo: WKPreviewElementInfo, defaultActions previewActions: [WKPreviewActionItem]) -> UIViewController? {
-        guard let url = elementInfo.linkURL else { return nil }
-        let webViewController = JXWebViewController()
-        webViewController.webViewConfiguration = webViewConfiguration
-        webViewController.webView.load(URLRequest(url: url))
-        return webViewController
-    }
-
-    open func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController) {
-        let webViewController = previewingViewController as? JXWebViewController
-        guard let url = webViewController?.webView.url else { return }
-        webView.load(URLRequest(url: url))
-    }
 }

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Drop deperated 3D Touch support
+
 ## 1.2.1 (2019-05-08)
 
 * Update Swift 5.0
