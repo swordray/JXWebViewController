@@ -59,6 +59,10 @@ navigationController?.pushViewController(webViewController, animated: true)
 
 Jianqiu Xiao, swordray@gmail.com
 
+## Sponsors
+
+* [BaiLu ShuYuan](https://bailushuyuan.org)
+
 ## License
 
 JXWebViewController is available under the MIT license. See the LICENSE file for more info.

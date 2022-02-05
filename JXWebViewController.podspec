@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JXWebViewController'
-  s.version          = '1.3.0'
+  s.version          = '1.3.1'
   s.summary          = 'An iOS view controller wrapper for WKWebView.'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 Since iOS 8, WKWebView is preferred over UIWebView. But unlike UIWebView, WKWebView provide less default behaviors due to the security design. JXWebViewController wrap up a WKWebView and implements a few standard features as iOS Safari does. So web views can be easily used in your apps out-of-the-box. It is also referred to as WebViewController, UIWebViewController or WKWebViewController.
                        DESC
 
-  s.homepage         = 'https://github.com/swordray/JXWebViewController'
+  s.homepage         = 'https://bailushuyuan.org'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jianqiu Xiao' => 'swordray@gmail.com' }

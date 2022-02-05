@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		022F221042E9EEB583BE3D44 /* Pods_JXWebViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXWebViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A57F28A7720184323C3C727 /* JXWebViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JXWebViewController.podspec; path = ../JXWebViewController.podspec; sourceTree = "<group>"; };
+		1A57F28A7720184323C3C727 /* JXWebViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JXWebViewController.podspec; path = ../JXWebViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4B65C0659F9544C6F53052FA /* Pods-JXWebViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXWebViewController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXWebViewController_Tests/Pods-JXWebViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		53FF8E79B3D8202D6D5706F6 /* Pods-JXWebViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXWebViewController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXWebViewController_Tests/Pods-JXWebViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		593DACE0A6FED66874540691 /* Pods_JXWebViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXWebViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,7 +296,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JXWebViewController_Example/Pods-JXWebViewController_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-JXWebViewController_Example/Pods-JXWebViewController_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JXWebViewController/JXWebViewController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -305,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXWebViewController_Example/Pods-JXWebViewController_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JXWebViewController_Example/Pods-JXWebViewController_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
